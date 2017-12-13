@@ -9,7 +9,7 @@ class Inventor extends React.Component {
 		return (
 			<div>
 				<h1>Inventory</h1>
-				<AddVeggieForm/>
+				<AddVeggieForm addVeggie={this.props.addVeggie}/>
 			</div>
 			
 			)

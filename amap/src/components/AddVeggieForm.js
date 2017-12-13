@@ -15,7 +15,11 @@ class AddVeggieForm extends React.Component {
 				image : this.image.value
 			}
 
-			console.log(veggie)
+			this.props.addVeggie(veggie);
+			console.log(veggie);
+			this.veggieForm.reset();
+
+
 		}
 
 	
@@ -24,7 +28,7 @@ class AddVeggieForm extends React.Component {
 		
 		return (
 
-			<form className="veggie-edit" onSubmit={(e) => this.creatVeggie(e)}>
+			<form ref={(input) => this.veggieForm = input} className="veggie-edit" onSubmit={(e) => this.creatVeggie(e)}>
 				<input ref={(input) => this.name = input} type="text" placeholder="Veggie Name"/>
 				<input ref={(input) => this.price = input} type="text" placeholder="Veggie Price"/>
 				<select ref={(input) => this.status = input}>
