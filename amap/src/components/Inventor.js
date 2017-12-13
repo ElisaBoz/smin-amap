@@ -1,13 +1,17 @@
 // c'est parti !
 
 import React from 'react';
-
+import AddVeggieForm from './AddVeggieForm'
 
 class Inventor extends React.Component {
 	render() {
 		
 		return (
-			<h1>Inventor</h1>
+			<div>
+				<h1>Inventory</h1>
+				<AddVeggieForm/>
+			</div>
+			
 			)
 
 	}
