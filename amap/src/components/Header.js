@@ -2,16 +2,14 @@
 
 import React from 'react';
 
+const Header = (props) => {
+	return (
+		<header class="top">
+			<h1>The mask</h1>
+			<h3> <span>{props.tagline}</span></h3>
+		</header>
+		)
 
-class Header extends React.Component {
-	render() {
-		
-		{/*mon commentaire*/}
-		return (
-			<h1>Header</h1>
-			)
-
-	}
 }
 
 export default Header;

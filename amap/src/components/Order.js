@@ -6,7 +6,6 @@ import React from 'react';
 class Order extends React.Component {
 	render() {
 		
-		{/*mon commentaire*/}
 		return (
 			<h1>order</h1>
 			)
