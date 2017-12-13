@@ -1,1 +1,15 @@
 // c'est parti !
+
+import React from 'react';
+
+import {render} from 'react-dom';
+
+import StorePicker from './components/StorePicker';
+
+import App from './components/app';
+
+import './css/style.css'
+
+
+
+render(<StorePicker/>, document.querySelector('#main'));
