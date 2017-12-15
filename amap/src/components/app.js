@@ -8,45 +8,52 @@ import Header from './Header';
 
 import Inventor from './Inventor';
 
-	
+import sampleVeggies from '../sample-veggies';
 
 
 
 class App extends React.Component {
-	constructor() {
-		super();
-		this.state = {
-			veggies: {}
-		}
-		this.addVeggie = this.addVeggie.bind(this);
+  constructor() {
+    super();
 
-	}
+    this.addVeggie = this.addVeggie.bind(this);
+    this.loadSamples = this.loadSamples.bind(this);
 
+    this.state = {
+      veggies: {},
+      order: {}
+    };
+  }
 
-	addVeggie(veggie) {
-		const veggies = {...this.state.veggies};
+  addVeggie(veggie) {
+    // mise à jour du state
+    // on fait une copie de notre state
+    const veggies = {...this.state.veggies};
+    // ajout de notre nouveau veggie
+    const timestamp = Date.now();
+    veggies[`veggie-${timestamp}`] = veggie;
+    // mise à jour du state
+    this.setState({ veggies });
+  }
 
-		const timestamp = Date.now();
+  loadSamples() {
+    this.setState({
+      veggies: sampleVeggies
+    });
+  }
 
-		veggies[`veggie-${timestamp}`] = veggie;
-
-		this.setState({veggies});
-	}
-
-	render() {
-		return (
-				<div className="amap">
-					<div className="menu">
-						<Header tagline="ca gaz les loulou"/>
-					</div>
-						<Order/>
-						<Inventor addVeggie={this.addVeggie}/>
-				</div>
-			)
-
-	}
+  render() {
+    return (
+      <div className="amap">
+        <div className="menu">
+          <Header tagline="Des bons legumes" />
+        </div>
+        <Order />
+        <Inventor addVeggie={this.addVeggie} loadSamples={this.loadSamples} />
+      </div>
+    )
+  }
 }
 
-
-
 export default App;
+
