@@ -1,5 +1,3 @@
-// c'est parti !
-
 import React from 'react';
 
 
