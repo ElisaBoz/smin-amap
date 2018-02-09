@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 // page 404
 import React from 'react';
 
@@ -14,3 +15,14 @@ const NotFound = (props) => {
 }
 
 export default NotFound;
+=======
+import React from 'react';
+
+const NotFound = (props) => {
+  return (
+    <h2>Not found !!!!</h2>
+  )
+}
+
+export default NotFound;
+>>>>>>> d5301965adb10dc9e234f348af9dbde3395ddbfa

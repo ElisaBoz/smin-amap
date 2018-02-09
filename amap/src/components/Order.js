@@ -1,5 +1,6 @@
 import React from 'react';
 
+<<<<<<< HEAD
 
 class Order extends React.Component {
 	render() {
@@ -43,3 +44,14 @@ class Order extends React.Component {
 }
 
 export default Order;
+=======
+class Order extends React.Component {
+  render() {
+    return (
+      <p>Order</p>
+    )
+  }
+}
+
+export default Order;
+>>>>>>> d5301965adb10dc9e234f348af9dbde3395ddbfa
