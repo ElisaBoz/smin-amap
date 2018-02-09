@@ -20,10 +20,13 @@ class App extends React.Component {
 
     this.addVeggie = this.addVeggie.bind(this);
     this.loadSamples = this.loadSamples.bind(this);
-
+    this.ajout = this.ajout.bind(this)
     this.state = {
       veggies: {},
-      order: {}
+      order: {},
+      orderVeggie: {}
+      
+
     };
   }
 
@@ -44,7 +47,32 @@ class App extends React.Component {
     });
   }
 
+  ajout(legume) {
+    //console.log(legume)
+    var nbVeggie = 0
+    const orderVeggie = {...this.state.orderVeggie};
+
+    Object
+    .keys(orderVeggie)
+    .map(function (key){
+      if (orderVeggie[key].name == orderVeggie.name){
+        orderVeggie[key].nbVeggie = orderVeggie.nbVeggie + 1
+      }
+
+    })
+
+    orderVeggie[legume.nom] = legume;
+    // mise à jour du state
+    console.log(orderVeggie)
+    this.setState({
+      orderVeggie
+    })
+    // console.log(orderVeggie)
+
+  }
+
   render() {
+    var that = this;
     return (
       <div className="amap">
         <div className="menu">
@@ -53,12 +81,12 @@ class App extends React.Component {
           {
             Object
               .keys(this.state.veggies)
-              .map( key => <Veggie key = {key} details={this.state.veggies[key]}/>)
+              .map( key => <Veggie key = {key} details={this.state.veggies[key]} ajout={that.ajout}/> )
           }
           </ul>
           
         </div>
-        <Order />
+        <Order orderVeggie={this.state.orderVeggie}/>
         <Inventor addVeggie={this.addVeggie} loadSamples={this.loadSamples} />
       </div>
     )
