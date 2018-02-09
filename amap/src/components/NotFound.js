@@ -1,21 +1,3 @@
-<<<<<<< HEAD
-// page 404
-import React from 'react';
-
-
-const NotFound = (props) => {
-	return (
-		<div>
-		<br/><br/><br/><br/><br/><br/>
-			<h2>404 ma biche</h2> 
-			<h1>Change de page mon brave ! <br/></h1>
-		</div>
-		)
-
-}
-
-export default NotFound;
-=======
 import React from 'react';
 
 const NotFound = (props) => {
@@ -25,4 +7,3 @@ const NotFound = (props) => {
 }
 
 export default NotFound;
->>>>>>> d5301965adb10dc9e234f348af9dbde3395ddbfa
